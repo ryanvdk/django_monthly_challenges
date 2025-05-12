@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # 'django.contrib.staticfiles' is necessary for adding static files like css files.
     'django.contrib.staticfiles',
     'challenges'
 ]
@@ -119,9 +120,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# This setting tells Django under which URL to provide static resources.
 STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# An optional Django setting that allos you to define directories containing static files so that Django can find them.
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
