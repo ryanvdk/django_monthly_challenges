@@ -7,13 +7,15 @@
 
 
 {% block page_content %}
+
+    {% include "./includes/header.html" %}
+
     <h1>{{ month|title }}'s Challenge</h1>
     {% if challenge_text is not None %}
       <h2>{{ challenge_text }}</h2>
     {% else %}
       <h2>There is no challenge for this month.</h2>
     {% endif %}
-    <a href="{% url "challenge-list" %}">List</a>
 {% endblock page_content %}
 
 
